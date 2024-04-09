@@ -1,8 +1,12 @@
 <script>
 
 import axios from 'axios';
+import ProjectCard from './ProjectCard.vue';
 
 export default {
+  components:{
+    ProjectCard
+  },
   name: "MainApp",
   data(){
     return{
@@ -43,16 +47,23 @@ export default {
 
   <h2>Projects</h2>
 
-  <ul>
-    <li v-for="(element,index) in arrayProjects" :key="element.id">
-      <a href="#">{{ element.title }}</a>
-    </li>
-  </ul>
+  <div class="container mb-5">
+    <div class="row">
+      <ProjectCard
+        v-for="(element,index) in arrayProjects" :key="element.id"
+            :propElement="element"
+          />
+    </div>
+  </div>
 
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
         <button class="page-link" @click="getProjects( currentPage - 1 )">Previous</button>
+      </li>
+
+      <li class="page-item" v-for=" (element,index) in lastPage" :key="index">
+        <button class="page-link"  @click="getProjects( element )">{{ element }}</button>
       </li>
       
       <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
