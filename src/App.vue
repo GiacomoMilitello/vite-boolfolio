@@ -1,17 +1,19 @@
 <script>
-import ExampleName from "./components/ExampleName.vue";
+import MainApp from "./components/MainApp.vue";
 
 export default {
   components: {
-    ExampleName,
+    MainApp,
   },
 };
 </script>
 
 <template>
-  <h1>Hello World</h1>
 
-  <ExampleName />
+  <h1>FrontEnd</h1>
+
+  <MainApp />
+  
 </template>
 
 <style lang="scss">
