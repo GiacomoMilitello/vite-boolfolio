@@ -1,18 +1,23 @@
 <script>
-import MainApp from "./components/MainApp.vue";
+// import MainApp from "./components/MainApp.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   components: {
-    MainApp,
+    AppHeader,
   },
 };
 </script>
 
 <template>
 
-  <h1>FrontEnd</h1>
+  <!-- <h1>FrontEnd</h1> -->
 
-  <MainApp />
+  <!-- <MainApp /> -->
+
+  <AppHeader />
+
+  <router-view></router-view>
   
 </template>
 
